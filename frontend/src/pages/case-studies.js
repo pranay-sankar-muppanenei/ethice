@@ -13,8 +13,9 @@ export default function CaseStudiesPage() {
   };
 
   return (
-    <section className="bg-[#f7faf7] py-12 px-6 md:px-12">
+    <section className=" py-12 px-6 md:px-12">
       {/* Breadcrumb */}
+      <div className="bg-[#f7faf7]">
       <div className="text-sm text-gray-500 mb-4">
         Home <span className="mx-2">›</span> Case Studies
       </div>
@@ -25,21 +26,22 @@ export default function CaseStudiesPage() {
         By harnessing technology, we unlock new growth, pioneer net-zero innovation, 
         and build enterprise-wide skills—delivering impact beyond financial metrics.
       </p>
+      </div>
 
       {/* Cards */}
       <div className="grid gap-6 sm:grid-cols-2">
         {caseStudies.slice(0, visibleCount).map((study) => (
           <div
             key={study.id}
-            className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden"
+            className="p-2 hover:bg-gray-100 flex bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden"
           >
             <img
               src={study.image}
               alt={study.title}
-              className="w-full h-60 object-cover"
+              className="h-[400px] w-[300px] object-cover rounded-xl"
             />
-            <div className="p-5">
-              <h3 className="text-lg font-semibold mb-2">{study.title}</h3>
+            <div className="p-5 flex flex-col justify-between">
+              <h3 className="text-md font-semibold mb-2">{study.title}</h3>
               <p className="text-sm text-gray-600">{study.description}</p>
             </div>
           </div>

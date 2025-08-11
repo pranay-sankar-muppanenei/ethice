@@ -24,7 +24,7 @@ const ContactCard = () => {
             </div>
             <div>
               <p className="text-sm text-gray-700">Call us at:</p>
-              <p className="font-semibold text-gray-900">1-800-356-8933</p>
+              <p className="font-semibold text-gray-900">+91 8097072126</p>
             </div>
           </div>
           <FiArrowRight className="text-xl text-gray-400" />
@@ -41,7 +41,7 @@ const ContactCard = () => {
             <div>
               <p className="text-sm text-gray-700">Visit us at:</p>
               <p className="font-semibold text-gray-900">
-                Seventh Ave, 20th Floor, New York, NY 10018
+                shop No:03, Vithal Mandi Building,Station Road,Thane,Maharashtra -400 099
               </p>
             </div>
           </div>

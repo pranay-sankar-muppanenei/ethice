@@ -41,12 +41,11 @@ const Footer = () => {
         {/* Contact Info */}
         <div>
           <h4 className="text-gray-400 mb-2 font-medium">Contact</h4>
-          <p className="text-white mb-2">P: 1-800-356-8933</p>
+          <p className="text-white mb-2">P: +91 80970 72126</p>
           <p className="text-white mb-4">E: info@execor.com</p>
           <h4 className="text-white mb-2 font-medium">Address</h4>
           <p className="text-white">
-            Seventh Ave, 20th Floor, <br />
-            New York, NY 10018
+            shop No:03, Vithal Mandi Building,Station Road,Thane,Maharashtra -400 099
           </p>
         </div>
       </div>
