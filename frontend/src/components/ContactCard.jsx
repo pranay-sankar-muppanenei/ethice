@@ -1,4 +1,4 @@
-import { FiPhone, FiMapPin } from "react-icons/fi";
+import { FiPhone, FiMapPin, FiArrowRight } from "react-icons/fi";
 
 const ContactCard = () => {
   return (
@@ -15,7 +15,7 @@ const ContactCard = () => {
       </div>
 
       {/* Bottom contact section */}
-      <div className="bg-white">
+      <div className="bg-[#f1f5f1]">
         {/* Call us */}
         <div className="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 transition-colors">
           <div className="flex items-center gap-3">
@@ -27,7 +27,7 @@ const ContactCard = () => {
               <p className="font-semibold text-gray-900">1-800-356-8933</p>
             </div>
           </div>
-          <span className="text-xl text-gray-400">➜</span>
+          <FiArrowRight className="text-xl text-gray-400" />
         </div>
 
         <hr />
@@ -45,7 +45,7 @@ const ContactCard = () => {
               </p>
             </div>
           </div>
-          <span className="text-xl text-gray-400">➜</span>
+          <FiArrowRight className="text-xl text-gray-400" />
         </div>
       </div>
     </div>

@@ -54,7 +54,7 @@ const ConsultationForm = () => {
         {/* Header */}
         <div className="bg-[#0D3E3E] text-white p-5 flex items-center justify-between">
           <h2 className="text-lg font-medium">
-            <span className="text-green-300 font-bold">Execor</span>{" "}
+            <span className="text-green-300 font-bold">E</span>xecor{" "}
             Schedule a Free Consultation
           </h2>
           <span className="text-xl">📨</span>
@@ -168,7 +168,7 @@ const ConsultationForm = () => {
 
           <button
             type="submit"
-            className="bg-green-200 text-black py-3 px-6 rounded-md hover:bg-green-300 transition-colors"
+            className="bg-[#C8F8A9] text-black py-3 px-6 rounded-md hover:bg-green-900 hover:text-white transition-colors"
           >
             Submit ➜
           </button>
