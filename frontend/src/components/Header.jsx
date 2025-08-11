@@ -8,17 +8,18 @@ const Header = () => {
     { name: "Services", href: "/services" },
     { name: "About", href: "/about" },
     { name: "Case Studies", href: "/case-studies" }, // <-- actual link
-    { name: "Blog", href: "/blog" },
-    { name: "Contact", href: "/contact" },
+    { name: "Blog", href: "/blogs" },
+    { name: "Contact", href: "/contact-us" },
   ];
 
   return (
     <header className="flex sticky top-0 items-center justify-between px-8 py-4 bg-[#0F3D3A] absolute top-0 left-0 w-full z-10 border-b border-white/10">
       {/* Logo */}
+      <Link href='/'>
       <div className="text-white font-bold text-3xl">
         <span className="text-green-400">E</span>thice
       </div>
-
+</Link>
       {/* Desktop Nav */}
       <nav className="hidden md:flex space-x-8 text-white font-medium">
         {navLinks.map((link) => (

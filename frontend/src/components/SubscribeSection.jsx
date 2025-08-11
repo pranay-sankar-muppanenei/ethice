@@ -4,7 +4,7 @@ import { FaPaperPlane } from "react-icons/fa";
 const SubscribeSection = () => {
   return (
     <section className="bg-[#f1f5f1] text-center py-16 px-4">
-      <h2 className="text-3xl md:text-5xl font-light text-black mb-8">
+      <h2 className="font-serif text-3xl md:text-5xl font-light text-black mb-8">
         Stay Ahead. Subscribe for{" "}
         <span className="italic">Expert Insights.</span>
       </h2>
@@ -13,13 +13,12 @@ const SubscribeSection = () => {
         <input
           type="email"
           placeholder="Email"
-          className="w-full bg-white md:w-2/3 px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black"
+          className="w-full bg-white md:w-2/3 px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black"
         />
         <button
           type="submit"
-          className="flex justify-between group items-center gap-2 bg-[#C8F8A9] hover:bg-green-900 hover:text-white text-black font-medium px-6 py-3 rounded-md transition"
+          className="flex justify-between group items-center gap-2 bg-[#C8F8A9] hover:bg-green-900 hover:text-white text-black font-medium px-6 py-2 rounded-md transition"
         >
-          
           Subscribe
           <FaPaperPlane className="text-lg text-green-900 group-hover:text-white" />
         </button>
