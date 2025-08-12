@@ -3,15 +3,15 @@ import { FaChevronLeft, FaChevronRight, FaQuoteLeft, FaQuoteRight } from "react-
 import testimonialsData from "../data/testimonialdummyData"; // adjust path if needed
 
 const brandLogos = [
-  { src: "/brands/coins.svg", alt: "Coin's" },
-  { src: "/brands/swiftline.svg", alt: "Swift Line" },
-  { src: "/brands/diamond.svg", alt: "Diamond" },
-  { src: "/brands/fabrik.svg", alt: "Fabrik" },
-  { src: "/brands/waves.svg", alt: "Waves" },
-  { src: "/brands/nexus.svg", alt: "Nexus" },
+  { src: "/coins.svg", alt: "Coin's" },
+  { src: "/swift.svg", alt: "Swift Line" },
+  { src: "/brand.svg", alt: "Diamond" },
+  { src: "/waves.svg", alt: "Fabrik" },
+  { src: "/brand-1.svg", alt: "Waves" },
+
 ];
 
-const Testimonials = () => {
+const Testimonials = ({ showFooter = true }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextTestimonial = () => {
@@ -27,27 +27,30 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="mb-16 bg-white max-w-7xl mx-auto overflow-hidden relative py-12">
+    <div className={`${
+    showFooter ? "mb-16" : "mb-0"
+  } bg-white max-w-7xl mx-auto overflow-hidden relative py-12`}>
       {/* Heading */}
-      <div className="text-center mb-5">
-        <h2 className="text-4xl font-bold text-gray-900">Testimonials</h2>
 
-      </div>
-      <div className="py-12">
-        <p className="text-center text-gray-600 mb-8 text-lg">
-          Fortune 500 Professionals Trust ExeCor CPA
-        </p>
-        <div className="flex flex-wrap justify-center gap-12">
-          {brandLogos.map((brand, idx) => (
-            <img
-              key={idx}
-              src={brand.src}
-              alt={brand.alt}
-              className="h-10 object-contain opacity-80 hover:opacity-100 transition-opacity"
-            />
-          ))}
-        </div>
-      </div>
+
+      {/* Brand Logos */}
+    <div className="py-12 flex flex-col items-center relative">
+  <button className="text-center text-black bg-gray-100 py-1 px-4 rounded-md mb-4 text-sm z-1 relative">
+    Fortune 500 Professionals Trust ExeCor CPA
+  </button>
+  <hr className="w-full border-t border-gray-300 absolute top-16 left-0 z-0" />
+  <div className="flex flex-wrap justify-center gap-12 mt-12">
+    {brandLogos.map((brand, idx) => (
+      <img
+        key={idx}
+        src={brand.src}
+        alt={brand.alt}
+        className="h-20 object-contain opacity-80 hover:opacity-100 transition-opacity"
+      />
+    ))}
+  </div>
+</div>
+
 
       {/* Carousel wrapper */}
       <div
@@ -83,28 +86,34 @@ const Testimonials = () => {
       </div>
 
       {/* Fixed Arrows */}
-      <button
-        onClick={prevTestimonial}
-        className="absolute left-4 bottom-1/5 -translate-y-1/2 bg-white text-gray-500 w-10 h-10 rounded-md flex items-center justify-center hover:bg-green-900 hover:text-white transition-colors duration-300 shadow"
-      >
-        <FaChevronLeft />
-      </button>
-      <button
-        onClick={nextTestimonial}
-        className="absolute left-20 bottom-1/5 -translate-y-1/2 bg-white text-gray-500 w-10 h-10 rounded-md flex items-center justify-center hover:bg-green-900 hover:text-white transition-colors duration-300 shadow"
-      >
-        <FaChevronRight />
-      </button>
+     <button
+  onClick={prevTestimonial}
+  className={`absolute left-4 ${
+    showFooter ? "bottom-1/6" : "bottom-1/10"
+  } -translate-y-1/2 bg-white text-gray-500 w-10 h-10 rounded-md flex items-center justify-center hover:bg-green-900 hover:text-white transition-colors duration-300 shadow`}
+>
+  <FaChevronLeft />
+</button>
 
-      {/* Logos row */}
+<button
+  onClick={nextTestimonial}
+  className={`absolute left-20 ${
+    showFooter ? "bottom-1/6" : "bottom-1/10"
+  } -translate-y-1/2 bg-white text-gray-500 w-10 h-10 rounded-md flex items-center justify-center hover:bg-green-900 hover:text-white transition-colors duration-300 shadow`}
+>
+  <FaChevronRight />
+</button>
 
-      {/* Footer */}
-      <div className="bg-[#0F3D3A] flex justify-between items-center px-6 py-4 rounded-b-lg">
-        <p className="text-white font-medium">What Our Clients Say</p>
-        <button className="bg-[#C8F8A9] text-black px-5 py-2 rounded-md hover:bg-[#0F3D3A] hover:text-white flex items-center gap-2 transition-colors duration-300">
-          Read All Testimonials →
-        </button>
-      </div>
+
+      {/* Footer (conditionally rendered) */}
+      {showFooter && (
+        <div className="bg-[#0F3D3A] flex justify-between items-center px-6 py-4 rounded-b-lg">
+          <p className="text-white font-medium">What Our Clients Say</p>
+          <button className="bg-[#C8F8A9] text-black px-5 py-2 rounded-md hover:bg-[#0F3D3A] hover:text-white flex items-center gap-2 transition-colors duration-300">
+            Read All Testimonials →
+          </button>
+        </div>
+      )}
     </div>
   );
 };

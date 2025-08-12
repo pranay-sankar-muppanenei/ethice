@@ -9,7 +9,7 @@ const HeroSection = () => {
     <section className="relative min-h-screen bg-[#043c3a] overflow-hidden flex items-center">
       <div className="absolute inset-0 bg-stripes z-0 opacity-20" />
 
-      <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-auto px-6">
+      <div className="relative  grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-auto px-6">
         {/* Left */}
         <div className="flex flex-col justify-center">
           <h1 className="text-white text-4xl md:text-6xl font-light leading-tight mb-6">

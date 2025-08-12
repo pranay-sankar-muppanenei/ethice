@@ -11,7 +11,7 @@ const Header = () => {
       href: "/about",
       dropdown: [
         { name: "Who We Are", href: "/about" },
-        { name: "Our Team", href: "/team" },
+        { name: "Our Team", href: "/about/team" },
         { name: "Careers", href: "/about/careers" },
         { name: "Testimonials", href: "/about/testimonials" },
         { name: "Press Release", href: "/about/press-release" },
@@ -51,7 +51,7 @@ const Header = () => {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="block px-4 py-2 hover:bg-gray-100"
+                    className="block px-4 py-2 hover:bg-[#C8F8A9]"
                   >
                     {item.name}
                   </Link>

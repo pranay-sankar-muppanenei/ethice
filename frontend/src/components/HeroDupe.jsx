@@ -13,7 +13,7 @@ const HeroDupe= () => {
       />
 
       {/* Left Text */}
-      <div className="absolute top-2 left-10 z-10">
+      <div className="absolute top-3 left-10 ">
         <h1 className="text-white text-5xl font-light leading-snug">
           Your Time is Valuable.
           <br />
