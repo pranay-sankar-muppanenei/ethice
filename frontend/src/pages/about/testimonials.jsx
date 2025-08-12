@@ -7,7 +7,7 @@ import Image from "next/image";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import testimonialsData from "@/data/testimonialdummyData"; // adjust path if needed
 
-export default function TeamPage() {
+export default function testimonials() {
   return (
     <>
       {/* Header Section */}
