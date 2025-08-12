@@ -20,7 +20,7 @@ Johnatan Moralle received an MBA from MIT’s Sloan School of Management. He stu
     id: "sarah-williams",
     name: "Sarah Williams",
     role: "CTO",
-    image: "/images/sarah.jpg",
+    image: "/old3.webp",
     email: "sarah@example.com",
     linkedin: "https://www.linkedin.com/in/sarah-williams",
     description: `
@@ -33,7 +33,7 @@ Johnatan Moralle received an MBA from MIT’s Sloan School of Management. He stu
     id: "david-lee",
     name: "David Lee",
     role: "Lead Designer",
-    image: "/images/david.jpg",
+    image: "/old2.webp",
     email: "david@example.com",
     linkedin: "https://www.linkedin.com/in/david-lee",
     description: `
@@ -45,7 +45,7 @@ Johnatan Moralle received an MBA from MIT’s Sloan School of Management. He stu
     id: "daniel-brila",
     name: "Daniel Brila",
     role: "President",
-    image: "/daniel.webp",
+    image: "/old4.webp",
     email: "daniel@example.com",
     linkedin: "https://www.linkedin.com/in/daniel-brila",
     description: `
@@ -57,7 +57,7 @@ Johnatan Moralle received an MBA from MIT’s Sloan School of Management. He stu
     id: "rebeca-johnson",
     name: "Rebeca Johnson",
     role: "Senior Tax Manager",
-    image: "/images/rebeca.jpg",
+    image: "/old1.webp",
     email: "rebeca@example.com",
     linkedin: "https://www.linkedin.com/in/rebeca-johnson",
     description: `
