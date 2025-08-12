@@ -34,9 +34,11 @@ const Header = () => {
 
       {/* Right Side */}
       <div className="flex items-center space-x-4">
+        <Link href="/contact-us">
         <button className="bg-[#C8F8A9] hover:bg-green-900 hover:text-white text-black text-[14px] px-5 py-2 rounded-md shadow-md flex justify-between items-center gap-2">
           Contact Us <FiArrowRight />
         </button>
+        </Link>
 
         {/* Mobile Menu Icon */}
         <div className="md:hidden text-white text-2xl cursor-pointer">

@@ -1,5 +1,24 @@
 import React from "react";
 import { FaCheck, FaArrowRight, FaCheckCircle } from "react-icons/fa";
+import { teamData } from "@/data/teamData";
+import Link from "next/link";
+
+const people = [
+  {
+    name: "Johnatan Moralle",
+    role: "Founder",
+    image: "/images/johnatan.jpg",
+  },
+  {
+    name: "Sarah Williams",
+    role: "CTO",
+    image: "/images/sarah.jpg",
+  },
+  {
+    name: "David Lee",
+    role: "Lead Designer",
+    image: "/images/david.jpg",
+  },];
 
 const About = () => {
   return (
@@ -187,7 +206,7 @@ const About = () => {
                 </h2>
               </div>
               <p className="text-gray-600 max-w-lg text-base">
-                At Execor, our team is a powerful blend of management and IT
+                At Ethice, our team is a powerful blend of management and IT
                 consulting experts passionate about solving complex business
                 challenges. With years of proven experience, we provide
                 strategic insights, innovative technology solutions, and
@@ -196,58 +215,44 @@ const About = () => {
             </div>
 
             {/* Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {/* First Card */}
-              <div className="bg-[#0c5149] text-white rounded-lg p-6 flex flex-col justify-between">
-                <p className="italic mb-6">“Legacy of success can power your future!”</p>
-                <div className="flex-grow"></div>
-                {/* Replace with your signature SVG */}
-                <svg width="80" height="40" className="mb-6 text-green-300">
-                  <line x1="0" y1="20" x2="80" y2="20" stroke="currentColor" />
-                </svg>
-                <button className="bg-green-200 text-green-900 px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-green-300 transition">
-                  Learn More
-                  <span className="text-xl">→</span>
-                </button>
-              </div>
+<div className="flex flex-wrap gap-6">
+  {/* First Card */}
+  <div className="bg-[#0c5149] text-white rounded-lg p-6 flex flex-col justify-between w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
+    <p className="italic mb-6">“Legacy of success can power your future!”</p>
+    <div className="flex-grow"></div>
+    <svg width="80" height="40" className="mb-6 text-green-300">
+      <line x1="0" y1="20" x2="80" y2="20" stroke="currentColor" />
+    </svg>
+    <button className="bg-green-200 text-green-900 px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-green-300 transition">
+      Learn More
+      <span className="text-xl">→</span>
+    </button>
+  </div>
 
-              {/* Team Member Cards */}
-              <div className="bg-gray-100 rounded-lg overflow-hidden transition-colors duration-300 hover:bg-green-100 cursor-pointer">
-                <img
-                  src="/images/johnatan.jpg"
-                  alt="Johnatan Moralle"
-                  className="w-full h-64 object-cover"
-                />
-                <div className="p-4">
-                  <h3 className="text-lg font-semibold">Johnatan Moralle</h3>
-                  <p className="text-sm text-gray-600">Founder</p>
-                </div>
-              </div>
+  {/* Team Member Cards */}
+  {teamData.map((person) => (
+    <Link
+      key={person.id}
+      href={`/team/${person.id}`}
+      className="bg-gray-100 rounded-lg overflow-hidden transition-colors duration-300 hover:bg-green-100 cursor-pointer w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]"
+    >
+      <img
+        src={person.image}
+        alt={person.name}
+        className="w-full h-64 object-cover"
+      />
+      <div className="p-4">
+        <h3 className="text-lg font-semibold">{person.name}</h3>
+        <p className="text-sm text-gray-600">{person.role}</p>
+      </div>
+    </Link>
+  ))}
 
-              <div className="bg-gray-100 rounded-lg overflow-hidden transition-colors duration-300 hover:bg-green-100 cursor-pointer">
-                <img
-                  src="/daniel.webp"
-                  alt="Daniel Brila"
-                  className="w-full h-64 object-cover"
-                />
-                <div className="p-4">
-                  <h3 className="text-lg font-semibold">Daniel Brila</h3>
-                  <p className="text-sm text-gray-600">President</p>
-                </div>
-              </div>
+  {/* Extra Cards */}
+ 
+</div>
 
-              <div className="bg-gray-100 rounded-lg overflow-hidden transition-colors duration-300 hover:bg-green-100 cursor-pointer">
-                <img
-                  src="/images/rebeca.jpg"
-                  alt="Rebeca Johnson"
-                  className="w-full h-64 object-cover"
-                />
-                <div className="p-4">
-                  <h3 className="text-lg font-semibold">Rebeca Johnson</h3>
-                  <p className="text-sm text-gray-600">Senior Tax Manager</p>
-                </div>
-              </div>
-            </div>
+
           </div>
         </div>
       </section>

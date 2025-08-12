@@ -27,7 +27,7 @@ export default function ContactUs() {
 
       {/* Heading */}
          <section className="bg-[#f5f8f5] py-14 px-6">
-        <h1 className="text-4xl text-center font-serif text-gray-900 mb-2">Get In Touch</h1>
+        <h1 className="text-[56px] text-center font-serif text-gray-900 mb-2">Get In Touch</h1>
         <p className="text-gray-600 text-center">We Look Forward to Connecting With You</p>
       </section>
 
@@ -91,7 +91,7 @@ export default function ContactUs() {
 
         {/* Right Form */}
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="bg-green-900 text-white px-6 py-4 flex items-center justify-between">
+          <div className="bg-[#0F3D3A] text-white px-6 py-4 flex items-center justify-between">
             <h3 className="text-lg font-medium">Contact Form</h3>
             <span className="bg-green-700 p-2 rounded-full">
               <FaPaperPlane />
