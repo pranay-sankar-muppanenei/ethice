@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 
 const awards = [
@@ -11,7 +11,25 @@ const awards = [
 
 export default function AwardsSection() {
   const [index, setIndex] = useState(0);
-  const slidesPerView = 3; // visible slides
+  const [slidesPerView, setSlidesPerView] = useState(3);
+
+  // Adjust slides per view based on screen width
+  useEffect(() => {
+    const updateSlides = () => {
+      if (window.innerWidth < 640) {
+        setSlidesPerView(1);
+      } else if (window.innerWidth < 1024) {
+        setSlidesPerView(2);
+      } else {
+        setSlidesPerView(3);
+      }
+    };
+
+    updateSlides();
+    window.addEventListener("resize", updateSlides);
+    return () => window.removeEventListener("resize", updateSlides);
+  }, []);
+
   const totalSlides = awards.length;
 
   const nextSlide = () => {
@@ -27,15 +45,17 @@ export default function AwardsSection() {
   };
 
   return (
-    <div className="bg-[#F2F5F1] rounded-lg p-8 overflow-hidden mb-10 mt-10">
+    <div className="bg-[#F2F5F1] rounded-lg p-6 sm:p-8 overflow-hidden mb-10 mt-10">
       {/* Header */}
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
         <div>
           <span className="bg-white rounded px-3 py-1 text-sm">
             Awards & Recognition
           </span>
-          <h2 className="text-4xl font-serif mt-4">Celebrating Excellence</h2>
-          <p className="text-gray-600 mt-3 max-w-xl">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif mt-4">
+            Celebrating Excellence
+          </h2>
+          <p className="text-gray-600 mt-3 max-w-xl text-sm sm:text-base">
             We’re proud to be recognized for our innovation and impact. Our
             awards reflect our commitment to quality, excellence, and the trust
             our clients place in us.
@@ -43,7 +63,7 @@ export default function AwardsSection() {
         </div>
 
         {/* Badge with poly.svg background */}
-        <div className="hidden md:block">
+        <div className="hidden md:block flex-shrink-0">
           <div
             className="p-6 rounded-xl text-center bg-cover bg-center"
             style={{ backgroundImage: "url('/poly.svg')" }}
@@ -69,17 +89,26 @@ export default function AwardsSection() {
             className="flex transition-transform duration-500 ease-in-out"
             style={{
               transform: `translateX(-${index * (100 / slidesPerView)}%)`,
+              width: `${(totalSlides / slidesPerView) * 100}%`
             }}
           >
             {awards.map((award, i) => (
-              <div key={i} className="w-1/3 flex-shrink-0 px-4 relative">
+              <div
+                key={i}
+                className="flex-shrink-0 px-4 relative"
+                style={{ width: `${100 / totalSlides}%` }}
+              >
                 {/* Year bubble */}
-                <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-green-200 text-green-900 text-sm font-medium px-3 py-1 rounded-full shadow">
+                <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-green-200 text-green-900 text-xs sm:text-sm font-medium px-3 py-1 rounded-full shadow">
                   {award.year}
                 </div>
                 <div className="bg-white rounded-lg shadow p-4">
-                  <h3 className="font-semibold mt-6">{award.title}</h3>
-                  <p className="text-gray-500 text-sm">{award.subtitle}</p>
+                  <h3 className="font-semibold mt-6 text-sm sm:text-base">
+                    {award.title}
+                  </h3>
+                  <p className="text-gray-500 text-xs sm:text-sm">
+                    {award.subtitle}
+                  </p>
                 </div>
               </div>
             ))}
