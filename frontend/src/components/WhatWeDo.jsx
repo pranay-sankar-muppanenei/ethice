@@ -4,67 +4,59 @@ import { FaArrowRight, FaCheck } from "react-icons/fa6";
 const services = [
   {
     title: "Corporate Bond Trading",
-description:null,
+    description: null,
     image: "/s1.svg",
- list: [
-      "Income Generation",
-      "Capital Preservation",
-      "Hedge Against Economic Slowdown",
-    ],
+    list: ["Income Generation", "Capital Preservation", "Hedge Against Economic Slowdown"],
   },
   {
     title: "Government Securities",
-    description:null,
+    description: null,
     image: "/s2.svg",
- list: [
-      "Income Generation",
-      "Capital Preservation",
-      "Hedge Against Economic Slowdown",
-    ],
+    list: ["Income Generation", "Capital Preservation", "Hedge Against Economic Slowdown"],
   },
   {
     title: "State Development Loans",
-    description:null,
+    description: null,
     image: "/s3.svg",
-     list: [
-      "Income Generation",
-      "Capital Preservation",
-      "Hedge Against Economic Slowdown",
-    ],
+    list: ["Income Generation", "Capital Preservation", "Hedge Against Economic Slowdown"],
   },
   {
     title: "Why Fixed Income?",
     description: null,
     image: "/s1.svg",
-    list: [
-      "Income Generation",
-      "Capital Preservation",
-      "Hedge Against Economic Slowdown",
-
-    ],
+    list: ["Income Generation", "Capital Preservation", "Hedge Against Economic Slowdown"],
   },
 ];
 
 const WhatWeDo = () => {
   return (
-    <section className="bg-white py-5 px-6">
-      <div className="w-full mx-auto">
-        <button className="text-sm bg-gray-100 px-2 py-2  text-black rounded-md mb-2">Our Services</button>
-        <div className="flex justify-between mx-auto w-full">
-        <h2 className="text-4xl font-serif font-semibold mb-4">What We Do!</h2>
-        <p className="text-gray-600 text-[14px] max-w-xl mb-12">
-          We specialize in fixed-income securities to help you grow and preserve
-          your wealth strategically.
-        </p>
-</div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+    <section className="bg-white py-10 px-4 sm:px-6 lg:px-12">
+      <div className="max-w-7xl mx-auto">
+        {/* Section Tag */}
+        <button className="text-xs sm:text-sm bg-gray-100 px-3 py-1.5 text-black rounded-md mb-4">
+          Our Services
+        </button>
+
+        {/* Heading + Description */}
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-10">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-semibold text-black">
+            What We Do!
+          </h2>
+          <p className="text-gray-600 text-sm sm:text-base max-w-2xl">
+            We specialize in fixed-income securities to help you grow and preserve
+            your wealth strategically.
+          </p>
+        </div>
+
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <div
               key={index}
-              className="group border border-gray-200 hover:border-[#C8F8A9] hover:scale-102 rounded-lg overflow-hidden transition duration-300"
+              className="group border border-gray-200 hover:border-green-300 hover:shadow-md rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105 flex flex-col"
             >
               {/* Image Section */}
-              <div className="h-30 flex items-center justify-center bg-white">
+              <div className="h-28 flex items-center justify-center bg-white">
                 <img
                   src={service.image}
                   alt={service.title}
@@ -72,17 +64,17 @@ const WhatWeDo = () => {
                 />
               </div>
 
-              {/* Title (Static) */}
-              <div className="p-6 text-left">
-                <h3 className="text-xl  mb-4 text-black">
+              {/* Title */}
+              <div className="px-6 pt-4 text-left">
+                <h3 className="text-lg sm:text-xl font-semibold text-black mb-4">
                   {service.title}
                 </h3>
               </div>
 
-              {/* Bottom Section (hover effect here only) */}
-              <div className="bg-gray-50 group-hover:bg-[#C8F8A9]  transition-all duration-300 p-6 text-left">
+              {/* Bottom Section */}
+              <div className="bg-gray-50 group-hover:bg-green-100 transition-all duration-300 p-6 text-left flex flex-col flex-grow">
                 {service.description && (
-                  <p className="text-sm text-gray-600 group-hover:text-black mb-6">
+                  <p className="text-sm text-gray-600 group-hover:text-black mb-4">
                     {service.description}
                   </p>
                 )}
@@ -101,10 +93,9 @@ const WhatWeDo = () => {
                   </ul>
                 )}
 
-                <button className="mt-auto w-full bg-white hover:bg-green-900 hover:text-white border border-gray-50 text-sm text-black py-2 px-4 rounded-md flex justify-between items-center transition">
-  Learn More <FaArrowRight size={12} />
-</button>
-
+                <button className="mt-auto w-full bg-white hover:bg-green-900 hover:text-white border border-gray-200 text-sm text-black py-2 px-4 rounded-md flex justify-between items-center transition">
+                  Learn More <FaArrowRight size={12} />
+                </button>
               </div>
             </div>
           ))}
