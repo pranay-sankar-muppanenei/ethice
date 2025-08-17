@@ -43,7 +43,7 @@ const SolutionsTabs = () => {
 
   return (
     <div className="bg-white">
-<div class="bg-[url('/right.jpg')] bg-cover bg-center flex items-center justify-center text-white text-5xl h-64">
+<div className="bg-[url('/right.jpg')] bg-cover bg-center flex items-center justify-center text-white text-5xl h-64">
 
         Find the Right Solution
       </div>
