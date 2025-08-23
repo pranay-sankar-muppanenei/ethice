@@ -4,7 +4,7 @@ import Image from "next/image"; // If using Next.js, else replace with <img>
 
 const SolutionsTabs = () => {
   const tabs = [
-    { id: "revenue", label: "Revenue Has Stalled or Dropped" },
+    { id: "revenue", label: "Revenue Has Stalled" },
     { id: "scaling", label: "Scaling My Business" },
     { id: "competitors", label: "Understanding My Competitors" },
   ];
@@ -43,13 +43,13 @@ const SolutionsTabs = () => {
 
   return (
     <div className="bg-white">
-<div className="bg-[url('/right.jpg')] bg-cover bg-center flex items-center justify-center text-white text-5xl h-64">
+<div className="bg-[url('/right.jpg')]  bg-center flex items-center justify-center text-white text-5xl h-64">
 
         Find the Right Solution
       </div>
 
       {/* Tabs */}
-      <div className="flex justify-center  mt-4">
+      <div className="flex justify-center   mt-4">
         {tabs.map((tab) => (
           <button
             key={tab.id}
